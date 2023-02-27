@@ -1,18 +1,19 @@
-import React from 'react';
-import {useMoviesData} from "../../../hooks/useMoviesData"
-import Movies from '../../Movies/Movies/Movies';
+import React from "react";
+import { useMoviesData } from "../../../hooks/useMoviesData";
+import Movies from "../../Movies/Movies/Movies";
+import 'swiper/css';
 
 const HomePage = () => {
+  const { movies, loading, error } = useMoviesData("/popular");
 
-  const {movies,loading,error} = useMoviesData("/popular");
-
-  console.log(movies,loading,error)
+  console.log(movies, loading, error);
 
   return (
     <div>
-        <Movies movies={movies}/>
-    </div>
-  )
-}
+      <Movies title="Popular Movies" movies={movies} />
 
-export default HomePage
+    </div>
+  );
+};
+
+export default HomePage;

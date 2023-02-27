@@ -5,7 +5,6 @@ import MoviePage from './components/pages/MoviePage/MoviePage';
 
 const App = () => {
 
-
   return (
     <>
         <BrowserRouter>

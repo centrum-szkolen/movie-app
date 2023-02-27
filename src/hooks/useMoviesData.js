@@ -19,13 +19,12 @@ export const useMoviesData = (query) => {
         } catch (er) {
             setError(er.message);
         }  
-        setLoading(false) 
+        setLoading(false) ;
     }
-
+    
     return {
         movies,
         loading,
         error
     }
-
 }
