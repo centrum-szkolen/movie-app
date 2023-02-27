@@ -4,14 +4,19 @@ import Movies from "../../Movies/Movies/Movies";
 import 'swiper/css';
 
 const HomePage = () => {
-  const { movies, loading, error } = useMoviesData("/popular");
+  const { movies:popular, loading, error } = useMoviesData("/movie/popular");
+  const { movies:topRated} = useMoviesData("/movie/top_rated");
+  const { movies:latest} = useMoviesData("/movie/upcoming");
+  const { movies:tvPopular} = useMoviesData("/tv/popular");
 
-  console.log(movies, loading, error);
+  console.log(tvPopular)
 
   return (
     <div>
-      <Movies title="Popular Movies" movies={movies} />
-
+      <Movies portrait title="Popular Movies" movies={popular} />
+      <Movies title="Top Rated" movies={topRated} />
+      <Movies portrait title="Upcoming Movies" movies={latest} />
+      <Movies title="Popular TV Shows" movies={tvPopular} />
     </div>
   );
 };

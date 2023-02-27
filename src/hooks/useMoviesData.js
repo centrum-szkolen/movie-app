@@ -13,7 +13,7 @@ export const useMoviesData = (query) => {
     const getData = async () => {
         const key = process.env.REACT_APP_API_KEY;
         try {
-            const res = await fetch(`https://api.themoviedb.org/3/movie/${query}?api_key=${key}`);
+            const res = await fetch(`https://api.themoviedb.org/3/${query}?api_key=${key}`);
             const data = await res.json(); 
             setMovies(data.results)     
         } catch (er) {
